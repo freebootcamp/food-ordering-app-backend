@@ -66,7 +66,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"username\": \"restaurant1\",\n    \"password\": \"password123\"\n}",
+							"raw": "{\n    \"username\": \"consumer1\",\n    \"password\": \"password123\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -137,7 +137,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5000/restaurants/1",
+							"raw": "http://localhost:5000/restaurants/2",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -145,7 +145,7 @@
 							"port": "5000",
 							"path": [
 								"restaurants",
-								"1"
+								"2"
 							]
 						}
 					},
@@ -279,7 +279,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5000/foodItems",
+							"raw": "http://localhost:5000/foodItems?_expand=restaurant",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -287,6 +287,12 @@
 							"port": "5000",
 							"path": [
 								"foodItems"
+							],
+							"query": [
+								{
+									"key": "_expand",
+									"value": "restaurant"
+								}
 							]
 						}
 					},
@@ -308,7 +314,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5000/foodItems/4",
+							"raw": "http://localhost:5000/foodItems/4?_expand=restaurant",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -317,6 +323,12 @@
 							"path": [
 								"foodItems",
 								"4"
+							],
+							"query": [
+								{
+									"key": "_expand",
+									"value": "restaurant"
+								}
 							]
 						}
 					},
@@ -485,7 +497,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5000/cart?userId=2",
+							"raw": "http://localhost:5000/cart?userId=2&_expand=foodItem",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -498,6 +510,10 @@
 								{
 									"key": "userId",
 									"value": "2"
+								},
+								{
+									"key": "_expand",
+									"value": "foodItem"
 								}
 							]
 						}
@@ -632,7 +648,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5000/orders",
+							"raw": "http://localhost:5000/orders?_expand=restaurant",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -640,6 +656,12 @@
 							"port": "5000",
 							"path": [
 								"orders"
+							],
+							"query": [
+								{
+									"key": "_expand",
+									"value": "restaurant"
+								}
 							]
 						}
 					},
@@ -661,7 +683,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5000/orders/1",
+							"raw": "http://localhost:5000/orders/6?_expand=restaurant",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -669,7 +691,13 @@
 							"port": "5000",
 							"path": [
 								"orders",
-								"1"
+								"6"
+							],
+							"query": [
+								{
+									"key": "_expand",
+									"value": "restaurant"
+								}
 							]
 						}
 					},
@@ -726,7 +754,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5000/orders?userId=2",
+							"raw": "http://localhost:5000/orders?userId=2&_expand=restaurant",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -739,6 +767,10 @@
 								{
 									"key": "userId",
 									"value": "2"
+								},
+								{
+									"key": "_expand",
+									"value": "restaurant"
 								}
 							]
 						}
@@ -853,6 +885,26 @@
 					"response": []
 				}
 			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
 		}
 	]
 }
