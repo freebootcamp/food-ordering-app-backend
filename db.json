@@ -1,0 +1,234 @@
+{
+  "users": [
+    {
+      "username": "restaurant1",
+      "password": "password123",
+      "role": "restaurant",
+      "id": 1
+    },
+    {
+      "username": "consumer1",
+      "password": "password123",
+      "role": "consumer",
+      "id": 2
+    },
+    {
+      "username": "admin1",
+      "password": "password123",
+      "role": "admin",
+      "id": 3
+    },
+    {
+      "username": "consumer2",
+      "password": "user123",
+      "role": "consumer",
+      "id": 4
+    }
+  ],
+  "restaurants": [
+    {
+      "id": 2,
+      "restaurantName": "Restaurant 2",
+      "address": "123 Main St",
+      "city": "New York",
+      "state": "NY",
+      "zip": "10001",
+      "phone": "123-456-7890",
+      "website": "www.restaurant2.com",
+      "cuisine": "Italian",
+      "userId": 2
+    },
+    {
+      "restaurantName": "Random restaurant",
+      "address": "123 Main St",
+      "city": "New York",
+      "state": "NY",
+      "zip": "10001",
+      "phone": "123-456-7890",
+      "website": "www.restaurant1.com",
+      "cuisine": "Italian",
+      "userId": 1,
+      "id": 3
+    },
+    {
+      "restaurantName": "Modified restaurant",
+      "address": "123 Main St",
+      "city": "New York",
+      "state": "NY",
+      "zip": "10001",
+      "phone": "123-456-7890",
+      "website": "www.restaurant1.com",
+      "cuisine": "Italian",
+      "userId": 1,
+      "id": 4
+    },
+    {
+      "restaurantName": "Random restaurant",
+      "address": "123 Main St",
+      "city": "New York",
+      "state": "NY",
+      "zip": "10001",
+      "phone": "123-456-7890",
+      "website": "www.restaurant1.com",
+      "cuisine": "Italian",
+      "userId": 1,
+      "id": 5
+    },
+    {
+      "restaurantName": "Random restaurant",
+      "address": "123 Main St",
+      "city": "New York",
+      "state": "NY",
+      "zip": "10001",
+      "phone": "123-456-7890",
+      "website": "www.restaurant1.com",
+      "cuisine": "Italian",
+      "userId": 1,
+      "id": 6
+    },
+    {
+      "restaurantName": "Random restaurant",
+      "address": "123 Main St",
+      "city": "New York",
+      "state": "NY",
+      "zip": "10001",
+      "phone": "123-456-7890",
+      "website": "www.restaurant1.com",
+      "cuisine": "Italian",
+      "userId": 1,
+      "id": 7
+    },
+    {
+      "restaurantName": "Random restaurant",
+      "address": "123 Main St",
+      "city": "New York",
+      "state": "NY",
+      "zip": "10001",
+      "phone": "123-456-7890",
+      "website": "www.restaurant1.com",
+      "cuisine": "Italian",
+      "userId": 1,
+      "id": 8
+    }
+  ],
+  "foodItems": [
+    {
+      "id": 4,
+      "name": "Burger",
+      "description": "A delicious burger",
+      "price": "$20.00",
+      "restaurantId": 2
+    },
+    {
+      "name": "Pizza new",
+      "description": "A delicious pizza",
+      "price": "$10.00",
+      "restaurantId": 2,
+      "id": 5
+    }
+  ],
+  "cart": [
+    {
+      "id": 4,
+      "foodItemId": 4,
+      "quantity": 2,
+      "userId": 2
+    },
+    {
+      "foodItemId": 4,
+      "quantity": 2,
+      "userId": 2,
+      "id": 6
+    }
+  ],
+  "orders": [
+    {
+      "id": 2,
+      "userId": 2,
+      "restaurantId": 3,
+      "cartId": 6,
+      "status": "pending"
+    },
+    {
+      "userId": 1,
+      "restaurantId": 2,
+      "cartId": 4,
+      "status": "pending",
+      "id": 4
+    },
+    {
+      "userId": 1,
+      "restaurantId": 2,
+      "cartId": 4,
+      "status": "completed",
+      "id": 5
+    },
+    {
+      "userId": 1,
+      "restaurantId": 2,
+      "cartId": 4,
+      "status": "completed",
+      "id": 6
+    }
+  ],
+  "protectedResource": [
+    {
+      "id": 1,
+      "name": "Protected Resource"
+    }
+  ],
+  "roleMapping": [
+    {
+      "route": "/restaurants",
+      "roles": [
+        "admin",
+        "restaurant"
+      ]
+    },
+    {
+      "route": "/restaurants/:id",
+      "roles": [
+        "admin",
+        "restaurant",
+        "consumer"
+      ]
+    },
+    {
+      "route": "/foodItems",
+      "roles": [
+        "consumer",
+        "restaurant"
+      ]
+    },
+    {
+      "route": "/foodItems/:id",
+      "roles": [
+        "restaurant"
+      ]
+    },
+    {
+      "route": "/cart",
+      "roles": [
+        "consumer"
+      ]
+    },
+    {
+      "route": "/cart/:id",
+      "roles": [
+        "consumer"
+      ]
+    },
+    {
+      "route": "/orders",
+      "roles": [
+        "restaurant"
+      ]
+    },
+    {
+      "route": "/orders/:id",
+      "roles": [
+        "restaurant"
+      ]
+    }
+  ]
+}

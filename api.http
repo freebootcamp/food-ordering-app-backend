@@ -1,0 +1,228 @@
+@host = localhost:5000
+###
+POST /signup
+Host: {{host}}
+Content-Type: application/json
+Accept: application/json
+
+{
+    "username":"restaurant1",
+    "password":"password123",
+    "role":"admin"
+}
+
+### Login 
+### credentials can be found in db.json
+# @name login
+POST /login
+Host: {{host}}
+Content-Type: application/json
+Accept: application/json
+
+{
+    "username":"admin1",
+    "password":"password123"
+}
+
+### 
+
+@token = {{login.response.body.$.token}}
+
+
+### Get all restaurants
+GET /restaurants
+Host: {{host}}
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer {{token}}
+
+### Get a single restaurant details
+GET /restaurants/7 HTTP/1.1
+Host: {{host}}
+Content-Type: application/json  
+Accept: application/json
+Authorization: Bearer {{token}}
+
+
+### Add a new restaurant
+POST /restaurants HTTP/1.1
+Host: {{host}}
+Authorization: Bearer {{token}}
+Content-Type: application/json
+Content-Length: 248
+
+{
+    "restaurantName": "Random restaurant",
+    "address": "123 Main St",
+    "city": "New York",
+    "state": "NY",
+    "zip": "10001",
+    "phone": "123-456-7890",
+    "website": "www.restaurant1.com",
+    "cuisine": "Italian",
+    "userId": 1
+}
+
+### Update a restaurant
+PUT /restaurants/1 HTTP/1.1
+Host: {{host}}
+Authorization: Bearer {{token}}
+Content-Type: application/json
+Content-Length: 250
+
+{
+    "restaurantName": "Modified restaurant",
+    "address": "123 Main St",
+    "city": "New York",
+    "state": "NY",
+    "zip": "10001",
+    "phone": "123-456-7890",
+    "website": "www.restaurant1.com",
+    "cuisine": "Italian",
+    "userId": 1
+}
+
+### Delete a restaurant
+DELETE /restaurants/1 HTTP/1.1
+Host: {{host}}
+Authorization: Bearer {{token}}
+
+### Get all food items
+GET /foodItems HTTP/1.1
+Host: {{host}}
+Authorization: Bearer {{token}}
+
+### Get a single food item
+GET /foodItems/4 HTTP/1.1
+Host: {{host}}
+Authorization: Bearer {{token}}
+
+### Get all food items of a restaurant
+GET /foodItems?restaurantId=2 HTTP/1.1
+Host: {{host}}
+Authorization: Bearer {{token}}
+
+### Add a new food item
+POST /foodItems HTTP/1.1
+Host: {{host}}
+Authorization: Bearer {{token}}
+Content-Type: application/json
+Content-Length: 137
+
+    {
+        "name": "Pizza new",
+        "description": "A delicious pizza",
+        "price": "$10.00",
+        "restaurantId": 2
+    }
+
+### Update a food item
+PUT /foodItems/3 HTTP/1.1
+Host: {{host}}
+Authorization: Bearer {{token}}
+Content-Type: application/json
+Content-Length: 131
+
+{
+    "id": 3,
+    "name": "Pizza modified",
+    "description": "A delicious pizza",
+    "price": "$10.00",
+    "restaurantId": 2
+}
+
+### Delete a food item
+DELETE /foodItems/3 HTTP/1.1
+Host: {{host}}
+Authorization: Bearer {{token}}
+
+### Get all cart items
+GET /cart?userId=2 HTTP/1.1
+Host: {{host}}
+Authorization: Bearer {{token}}
+
+### Add cart item to users cart
+POST /cart HTTP/1.1
+Host: {{host}}
+Authorization: Bearer {{token}}
+Content-Type: application/json
+Content-Length: 59
+
+{
+    "foodItemId": 4,
+    "quantity": 2,
+    "userId": 2
+}
+
+### Update cart item of a user's cart
+PUT /cart/5 HTTP/1.1
+Host: {{host}}
+Authorization: Bearer {{token}}
+Content-Type: application/json
+Content-Length: 74
+
+{
+    "foodItemId": 4,
+    "quantity": 4,
+    "userId": "1",
+    "id": 5
+}
+
+### Delete a cart item
+DELETE /cart/5 HTTP/1.1
+Host: {{host}}
+Authorization: Bearer {{token}}
+
+### Get all orders
+GET /orders HTTP/1.1
+Host: {{host}}
+Authorization: Bearer {{token}}
+
+### Get a single order
+GET /orders/1 HTTP/1.1
+Host: {{host}}
+Authorization: Bearer {{token}}
+
+### Get orders of a restaurant
+GET /orders?restaurantId=3 HTTP/1.1
+Host: {{host}}
+Authorization: Bearer {{token}}
+
+### Get orders of a user
+GET /orders?userId=2 HTTP/1.1
+Host: {{host}}
+Authorization: Bearer {{token}}
+
+### Add a new order
+POST /orders HTTP/1.1
+Host: {{host}}
+Authorization: Bearer {{token}}
+Content-Type: application/json
+Content-Length: 102
+
+    {
+      "userId": 1,
+      "restaurantId": 2,
+      "cartId": 4,
+      "status": "completed"
+    }
+
+### Update status of an order
+PUT /orders/1 HTTP/1.1
+Host: {{host}}
+Authorization: Bearer {{token}}
+Content-Type: application/json
+Content-Length: 99
+
+{
+    "id": 1,
+    "userId": 1,
+    "restaurantId": 2,
+    "cartId": 4,
+    "status": "completed"
+}    
+
+### Delete an order
+DELETE /orders/1 HTTP/1.1
+Host: {{host}}
+Authorization: Bearer {{token}}
