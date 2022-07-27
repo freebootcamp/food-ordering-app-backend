@@ -35,11 +35,12 @@ function isAuthorized(req) {
         // if (!route) return "AUTHORIZED";
         console.log(`route is ${JSON.stringify(route, null, 2)}`);
         console.log(
-          `route.roles is ${JSON.stringify(
-            route.roles,
+          `route.authorization[req.method] is ${JSON.stringify(
+            route.authorization[req.method],
             null,
             2
-          )}, typeof route.roles is ${typeof route.roles}`
+          )}, typeof route.authorization[req.method] is ${typeof route
+            .authorization[req.method]}`
         );
         console.log(
           `payload is ${JSON.stringify(
@@ -48,7 +49,9 @@ function isAuthorized(req) {
             2
           )}. type is : ${typeof payload.role}`
         );
-        if (route.roles.includes(payload.role)) {
+
+        console.log(`req.method is ${req.method}`);
+        if (route.authorization[req.method].includes(payload.role)) {
           return "AUTHORIZED";
         } else {
           return "Unauthorized to access this resource";

@@ -7,168 +7,127 @@
       "id": 1
     },
     {
+      "username": "restaurant2",
+      "password": "password123",
+      "role": "restaurant",
+      "id": 2
+    },
+    {
       "username": "consumer1",
       "password": "password123",
       "role": "consumer",
-      "id": 2
+      "id": 3
+    },
+    {
+      "username": "consumer1",
+      "password": "password123",
+      "role": "consumer",
+      "id": 4
     },
     {
       "username": "admin1",
       "password": "password123",
       "role": "admin",
-      "id": 3
+      "id": 5
     },
     {
-      "username": "consumer2",
-      "password": "user123",
-      "role": "consumer",
-      "id": 4
+      "username": "admin2",
+      "password": "password123",
+      "role": "admin",
+      "id": 6
     }
   ],
   "restaurants": [
     {
+      "id": 1,
+      "name": "Mission Chinese Food",
+      "neighborhood": "Manhattan",
+      "image": "https://images.unsplash.com/photo-1569762848460-1e6301bdbea3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8cmVzdGF1cmFudHx8fHx8fDE2NTg4OTgyNDQ&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080",
+      "address": "171 E Broadway, New York, NY 10002",
+      "latlng": {
+        "lat": 40.713829,
+        "lng": -73.989667
+      },
+      "cuisine_type": "Asian",
+      "operating_hours": {
+        "Monday": "5:30 pm - 11:00 pm",
+        "Tuesday": "5:30 pm - 12:00 am",
+        "Wednesday": "5:30 pm - 12:00 am",
+        "Thursday": "5:30 pm - 12:00 am",
+        "Friday": "5:30 pm - 12:00 am",
+        "Saturday": "12:00 pm - 4:00 pm, 5:30 pm - 12:00 am",
+        "Sunday": "12:00 pm - 4:00 pm, 5:30 pm - 11:00 pm"
+      }
+    },
+    {
       "id": 2,
-      "restaurantName": "Restaurant 2",
-      "address": "123 Main St",
-      "city": "New York",
-      "state": "NY",
-      "zip": "10001",
-      "phone": "123-456-7890",
-      "website": "www.restaurant2.com",
-      "cuisine": "Italian",
-      "userId": 2
-    },
-    {
-      "restaurantName": "Random restaurant",
-      "address": "123 Main St",
-      "city": "New York",
-      "state": "NY",
-      "zip": "10001",
-      "phone": "123-456-7890",
-      "website": "www.restaurant1.com",
-      "cuisine": "Italian",
-      "userId": 1,
-      "id": 3
-    },
-    {
-      "restaurantName": "Modified restaurant",
-      "address": "123 Main St",
-      "city": "New York",
-      "state": "NY",
-      "zip": "10001",
-      "phone": "123-456-7890",
-      "website": "www.restaurant1.com",
-      "cuisine": "Italian",
-      "userId": 1,
-      "id": 4
-    },
-    {
-      "restaurantName": "Random restaurant",
-      "address": "123 Main St",
-      "city": "New York",
-      "state": "NY",
-      "zip": "10001",
-      "phone": "123-456-7890",
-      "website": "www.restaurant1.com",
-      "cuisine": "Italian",
-      "userId": 1,
-      "id": 5
-    },
-    {
-      "restaurantName": "Random restaurant",
-      "address": "123 Main St",
-      "city": "New York",
-      "state": "NY",
-      "zip": "10001",
-      "phone": "123-456-7890",
-      "website": "www.restaurant1.com",
-      "cuisine": "Italian",
-      "userId": 1,
-      "id": 6
-    },
-    {
-      "restaurantName": "Random restaurant",
-      "address": "123 Main St",
-      "city": "New York",
-      "state": "NY",
-      "zip": "10001",
-      "phone": "123-456-7890",
-      "website": "www.restaurant1.com",
-      "cuisine": "Italian",
-      "userId": 1,
-      "id": 7
-    },
-    {
-      "restaurantName": "Random restaurant",
-      "address": "123 Main St",
-      "city": "New York",
-      "state": "NY",
-      "zip": "10001",
-      "phone": "123-456-7890",
-      "website": "www.restaurant1.com",
-      "cuisine": "Italian",
-      "userId": 1,
-      "id": 8
+      "userId": 2,
+      "name": "Emily",
+      "neighborhood": "Brooklyn",
+      "image": "https://images.unsplash.com/photo-1484325881845-65073528922e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8cmVzdGF1cmFudHx8fHx8fDE2NTg4OTgxODE&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080",
+      "address": "919 Fulton St, Brooklyn, NY 11238",
+      "latlng": {
+        "lat": 40.683555,
+        "lng": -73.966393
+      },
+      "cuisine_type": "Pizza",
+      "operating_hours": {
+        "Monday": "5:30 pm - 11:00 pm",
+        "Tuesday": "5:30 pm - 11:00 pm",
+        "Wednesday": "5:30 pm - 11:00 pm",
+        "Thursday": "5:30 pm - 11:00 pm",
+        "Friday": "5:30 pm - 11:00 pm",
+        "Saturday": "5:00 pm - 11:30 pm",
+        "Sunday": "12:00 pm - 3:00 pm, 5:00 pm - 11:00 pm"
+      }
     }
   ],
   "foodItems": [
     {
-      "id": 4,
-      "name": "Burger",
-      "description": "A delicious burger",
-      "price": "$20.00",
-      "restaurantId": 2
+      "id": 1,
+      "name": "Noodles",
+      "description": "A delicious cup of noodles",
+      "image": "https://images.unsplash.com/photo-1555126634-323283e090fa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8bm9vZGxlc3x8fHx8fDE2NTg4OTg0Nzk&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080",
+      "price": "$10.00",
+      "restaurantId": 1
     },
     {
-      "name": "Pizza new",
-      "description": "A delicious pizza",
-      "price": "$10.00",
-      "restaurantId": 2,
-      "id": 5
+      "id": 2,
+      "name": "Burger",
+      "description": "A delicious burger",
+      "image": "https://images.unsplash.com/photo-1586190848861-99aa4a171e90?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8Zm9vZHx8fHx8fDE2NTg4OTgzMjE&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080",
+      "price": "$20.00",
+      "restaurantId": 2
     }
   ],
   "cart": [
     {
-      "id": 4,
-      "foodItemId": 4,
+      "id": 1,
+      "foodItemId": 1,
       "quantity": 2,
-      "userId": 2
+      "userId": 1
     },
     {
-      "foodItemId": 4,
-      "quantity": 2,
-      "userId": 2,
-      "id": 6
+      "id": 2,
+      "foodItemId": 2,
+      "quantity": 3,
+      "userId": 2
     }
   ],
   "orders": [
     {
-      "id": 2,
-      "userId": 2,
-      "restaurantId": 3,
-      "cartId": 6,
+      "id": 1,
+      "userId": 1,
+      "restaurantId": 1,
+      "cartId": 1,
       "status": "pending"
     },
     {
-      "userId": 1,
+      "id": 2,
+      "userId": 2,
       "restaurantId": 2,
-      "cartId": 4,
-      "status": "pending",
-      "id": 4
-    },
-    {
-      "userId": 1,
-      "restaurantId": 2,
-      "cartId": 4,
-      "status": "completed",
-      "id": 5
-    },
-    {
-      "userId": 1,
-      "restaurantId": 2,
-      "cartId": 4,
-      "status": "completed",
-      "id": 6
+      "cartId": 2,
+      "status": "completed"
     }
   ],
   "protectedResource": [
@@ -180,55 +139,119 @@
   "roleMapping": [
     {
       "route": "/restaurants",
-      "roles": [
-        "admin",
-        "restaurant"
-      ]
+      "authorization": {
+        "GET": [
+          "admin"
+        ],
+        "POST": [
+          "admin"
+        ],
+        "PUT": [],
+        "DELETE": []
+      }
     },
     {
       "route": "/restaurants/:id",
-      "roles": [
-        "admin",
-        "restaurant",
-        "consumer"
-      ]
+      "authorization": {
+        "GET": [
+          "admin",
+          "restaurant",
+          "consumer"
+        ],
+        "POST": [],
+        "PUT": [
+          "admin",
+          "restaurant"
+        ],
+        "DELETE": [
+          "admin"
+        ]
+      }
     },
     {
       "route": "/foodItems",
-      "roles": [
-        "consumer",
-        "restaurant"
-      ]
+      "authorization": {
+        "GET": [
+          "restaurant",
+          "consumer"
+        ],
+        "POST": [
+          "restaurant"
+        ],
+        "PUT": [],
+        "DELETE": []
+      }
     },
     {
       "route": "/foodItems/:id",
-      "roles": [
-        "restaurant"
-      ]
+      "authorization": {
+        "GET": [
+          "restaurant"
+        ],
+        "POST": [],
+        "PUT": [
+          "restaurant"
+        ],
+        "DELETE": [
+          "restaurant"
+        ]
+      }
     },
     {
       "route": "/cart",
-      "roles": [
-        "consumer"
-      ]
+      "authorization": {
+        "GET": [
+          "consumer"
+        ],
+        "POST": [
+          "consumer"
+        ],
+        "PUT": [],
+        "DELETE": []
+      }
     },
     {
       "route": "/cart/:id",
-      "roles": [
-        "consumer"
-      ]
+      "authorization": {
+        "GET": [
+          "consumer"
+        ],
+        "POST": [],
+        "PUT": [
+          "consumer"
+        ],
+        "DELETE": [
+          "consumer"
+        ]
+      }
     },
     {
       "route": "/orders",
-      "roles": [
-        "restaurant"
-      ]
+      "authorization": {
+        "GET": [
+          "consumer",
+          "restaurant"
+        ],
+        "POST": [
+          "consumer"
+        ],
+        "PUT": [],
+        "DELETE": []
+      }
     },
     {
       "route": "/orders/:id",
-      "roles": [
-        "restaurant"
-      ]
+      "authorization": {
+        "GET": [
+          "consumer",
+          "restaurant"
+        ],
+        "POST": [],
+        "PUT": [
+          "restaurant"
+        ],
+        "DELETE": []
+      }
     }
   ]
 }
