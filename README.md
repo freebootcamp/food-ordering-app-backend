@@ -23,19 +23,35 @@ There is no protection for the signup route and the login route
 
 ## Routes
 
-### `Consumer` can access the following routes
+### A `Consumer` can access the following routes
 
 | Method | Route          | Purpose          | 
 | ------------- |-------------|-------------|
 | POST | /signup | Register a new user |
 | POST | /login  | Login with credentials | 
+| GET | /foodItems?_expand=restaurant | Get all food items offered by all restaurants | 
 | GET | /restaurants/:id | Get a single restaurant by id |
-| GET | /foodItems | Get food items | 
-| GET | /foodItems/:foodItemId | Get a single food item details | 
-| GET | /cart?userId=2&_expand=foodItem | Get cart items of a consumer | 
 | POST | /cart | Add cart item to a consumer's cart | 
+| PUT | /cart/:cartId | Update a cart item (quanity) |
+| DELETE | /cart/:cartId | Delete an item from cart | 
+| GET | /cart?userId=2&_expand=foodItem | Get cart items of a consumer | 
+| POST | /orders | Create a new order | 
 | GET | /orders?userId=:userId&_expand=restaurant | View orders of a consumer |
 | GET | /orders/:orderId?_expand=restaurant | View a single order by id | 
-| POST | /orders | Create a new order | 
+
+### A `Restaurant` can access the following routes
+
+| Method | Route          | Purpose          | 
+| ------------- |-------------|-------------|
+| POST | /signup | Register a new user |
+| POST | /login  | Login with credentials | 
+| GET | /foodItems?restaurantId=:restaurantId | Get all food items offered by all restaurants | 
+| POST | /foodItems/:foodItemId | Add a new food item to menu | 
+| PUT | /foodItems/:foodItemId | Update a food item (price) |
+| DELETE | /foodItems/:foodItemId| Delete a food item | 
+| GET | /restaurants/:restaurantId | Get a single restaurant by id |
+| GET | /orders?restaurantId=:restaurantId | View all orders given to a restaurant |
+| GET | /orders/:orderId | View a single order by id | 
+| PUT | /orders/:orderId | Update a single order (status) | 
 
 
